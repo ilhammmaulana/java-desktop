@@ -11,11 +11,10 @@ import java.sql.DriverManager;
 public class connection {
 
     public static Connection openConnection() {
-        Connection cn;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/java_crud", "root", "");
-            return cn;
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/java_crud", "root", "");
+            return connection;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
